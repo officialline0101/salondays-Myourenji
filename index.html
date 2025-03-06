@@ -434,6 +434,7 @@
         <div class="info-text">※メニューを選択すると空き状況のカレンダーが表示されます</div>
         <div class="menu-sections">
             <button type="button" onclick="showMenu('male')">脱毛</button>
+            <button type="button" onclick="showMenu('Hatsumou')">発毛</button>
             <button type="button" onclick="showMenu('female')">エステ</button>
             <button type="button" onclick="showMenu('whitening')">骨盤底筋チェア</button>
         </div>
@@ -451,11 +452,22 @@
             </div>
         </div>
 
+        <div id="Hatsumou" class="menu-section">
+            <div class="highlight-background">
+                <span class="highlight-text">◆発毛◆</span>
+            </div>
+            <div class="symptoms">
+                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">臍帯血発毛</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">スカルプ</button>
+            </div>
+        </div>
+
         <div id="female" class="menu-section">
             <div class="highlight-background">
                 <span class="highlight-text">◆エステ◆</span>
             </div>
             <div class="symptoms">
+                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">臍帯血フェイシャル</button>
                 <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">小顔リフトアップ</button>
                 <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">フェイシャル</button>
                 <button type="button" onclick="selectSymptom(this, 'treatment7')" data-price="15000">ボディーメイク</button>
@@ -560,7 +572,10 @@
             '小顔リフトアップ': 30,
             'フェイシャル': 60,
             'ボディーメイク': 60,
-            '骨盤底筋チェア': 30
+            '骨盤底筋チェア': 30,
+            '臍帯血発毛': 60,
+            'スカルプ': 30,
+            '臍帯血フェイシャル': 60,
         };
 
 
@@ -932,6 +947,8 @@
             const table = calendar.querySelector('table tbody');
 
             const times = [
+                '09:00', '09:30', '10:00', '10:30',
+                '11:00', '11:30',
                 '12:00', '12:30', '13:00', '13:30',
                 '14:00', '14:30', '15:00', '15:30',
                 '16:00', '16:30', '17:00', '17:30',
